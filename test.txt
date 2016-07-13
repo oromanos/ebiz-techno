@@ -1,5 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 gyurtyuruhello
+=======
+hello checking
+pratosh
+>>>>>>> a908c7bb0e5e5e98680b95e3eff2ce90fea82c9c
 =======
 hello!GIT!
 >>>>>>> e4b2eed3d68fdfe87516c2552f8852dcc73f0bbb
