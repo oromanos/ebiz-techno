@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 hello checking
 pratosh
+=======
+hello!GIT!
+>>>>>>> e4b2eed3d68fdfe87516c2552f8852dcc73f0bbb
