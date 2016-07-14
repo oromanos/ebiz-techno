@@ -21,10 +21,8 @@ if($_SESSION['username']==''){
     <h1>Welcome</h1>
        <p id="demo" align="right"></p>
 
-        <script>
-        document.getElementById("demo").innerHTML = Date();
-        </script>
-    <hr>
+        
+   
     <?php   
 
          session_start();
