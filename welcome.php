@@ -14,7 +14,7 @@ if($_SESSION['username']==''){
     <head>
         <title>Home </title>
         <script type="text/javascript">
-        
+            
     </script>
     </head>
     <body>
@@ -23,6 +23,8 @@ if($_SESSION['username']==''){
 
         
    
+   
+
     <?php   
 
          session_start();
@@ -33,9 +35,12 @@ if($_SESSION['username']==''){
 
 
 
+
       
     ?>
-
-        
+    <hr>
+    <form action="signout.php">
+         <label>SIGNOUT: <input type="submit" name="signout" value="Sign Out" onclick="return confirm('Are you sure you want to continue')">   </label>  
+    </form>    
     </body>
     </html>
