@@ -1,9 +1,5 @@
 <?php
-/*if (!isset($_SERVER['HTTP_REFERER'])){
 
-   echo "<h1> unauthorised access</h1>";
-   
-    }*/
     session_start();
     if ($_SESSION['username']=='') {
         header('location:login.php');
@@ -13,6 +9,7 @@
 ?>
    <html>
         <head>
+            
             <title>
                 Home 
             </title>
@@ -42,13 +39,8 @@
         <br><br><br><br><br>
 
         <p id="demo" align="center">
-            <a href="setting.php">
-                <input type="submit" value="Settings"><br><br>
-            </a>
-            <a href="signout.php">
-                <input type="submit" value="Signout" onclick="alert('are you sure you want to logout??')">
-            </a>
-
+            
+            <input type="radio" value="change_password" name="set" onclick="location.href='change_password.php'" >  change Password.<br>
         </p>
     </body>
     </html>
