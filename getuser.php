@@ -20,7 +20,7 @@ ini_set('display_errors',1);
 
 				    else {
 				   
-		    				echo '<font color="red">The nickname <strong>'.$q.'</strong>'.' is already in use.</font>';
+		    				echo '<font color="red">The username <strong>'.$q.'</strong>'.' is already in use.</font>';
 						}
 
 }

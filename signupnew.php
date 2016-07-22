@@ -1,3 +1,8 @@
+<?php
+session_start();
+//print_r($_SESSION);
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -8,7 +13,9 @@
       <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
       <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 	<title>Sign Up</title>
+	
 	<script>
+	
 		function showUser(str){
 				if(str.length==0){
 					document.getElementById("txtUser").innerHTML="Please Enter Username!";
@@ -33,10 +40,7 @@
 					alert("Passwords do not match!Please Re-Enter your Password");
 					return false;	
 				}
-
-
-
-		}
+			}
 		function validateForm(){
 			var fn=document.forms["myForm"]["fullname"].value;
 			var uname=document.forms["myForm"]["username"].value;
@@ -55,10 +59,10 @@
 				alert("Password must be filled out");
 				return false;
 			}
-			if(Dob == null || Dob == '' ){
+			/*if(Dob == null || Dob == '' ){
 				alert("Date of Birth must be filled out");
 				return false;
-			}
+			}*/
 			if(mail == null || mail == '' ){
 				alert("Email must be filled out");
 				return false;
@@ -68,9 +72,13 @@
     		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=mail.length) {
         			alert("Not a valid e-mail address");
         			return false;
-    }
+    			}
+    		}
 
-		}
+
+
+		
+		
 		$(function() {
             $("#dob").datepicker({
             	changeMonth: true,
@@ -85,24 +93,38 @@
 </head>
 <body bgcolor="beige">	
 		<h1>Sign Up Page</h1>
+		
 
 		<hr>
 		<br>
-		<div align=center><h3>Please provide us with the details</h3></div>
-		<form name="myForm" action="insert.php" onsubmit="return validateForm()" method="POST">
+		<form name="myForm" action="insert.php" onsubmit="return validateForm()" method="post">
+		<h2 align="center">Form</h2>
+		<div align="center">* required field</div>
 		<table align="center">
-			
-			<tr><td>Full Name:</td><td><input type="text" name="fullname" ></td></tr>
-			<tr><td>User Name:</td><td><input type="text" name="username" onblur="showUser(this.value)"></td></tr>
-			<tr><td>Email ID:</td><td><input type="text" name="email" ></td></tr>
-			<tr><td>Password:</td><td><input type="password" name="password" id="password" "></td></tr>
-			<tr><td>Re-Enter Password:</td><td><input type="password" name="repassword" id="repassword" onblur="check_Password()"></td></tr>
-			<tr><td>Date Of Birth:</td><td><input type="text" name="dob" id="dob"></td></tr>
-			<tr><td><input type="submit" value="Submit" ></td></tr>
-		</table>	
 
+		<tr><td>Full Name:</td><td><input  name="fullname" type="text" id="fullname"></td><td><span >* <?php echo $_SESSION['fullnameError'];?></span><br></td></tr>
+			
+		<tr><td>User Name:</td><td><input  name="username" type="text" id="username" onblur="showUser(this.value)"></td><td><span >* <?php echo $_SESSION['usernameError'] ;?></span><br></td></tr>
+		
+		<tr><td>E-mail:</td><td><input  name="email" type="text" id="email" ></td><td><span >* <?php echo $_SESSION['emailError'];?></span><br></td></tr>
+			
+		<tr><td>Password:</td><td><input  name="password" type="password" id="password" ></td><td><span >*<?php echo $_SESSION['passError'];?></span><br></td></tr>
+			
+		<tr><td>Re-enter Password:</td><td><input  name="repassword" type="password" id="repassword" onblur="check_Password()" ></td></tr>
+		
+		<br>
+		<tr><td>Date Of Birth:</td><td><input type="text" name="dob" id="dob"><br></td>
+		<tr><td><input  name="submit" type="submit" value="submit"></td></tr>
+		</table>
 		</form>
 		<br>
+
 	<p>Suggestions: <span id="txtUser"></span></p>
+<?php
+
+unset($_SESSION['fullnameError'],$_SESSION['usernameError'],$_SESSION['emailError'],$_SESSION['passError'] );
+?>
 </body>
+
 </html>
+

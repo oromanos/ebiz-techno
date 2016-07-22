@@ -42,5 +42,6 @@ if($_SESSION['username']==''){
     <form action="signout.php">
          <label>SIGNOUT: <input type="submit" name="signout" value="Sign Out" onclick="return confirm('Are you sure you want to continue')">   </label>  
     </form>    
+    <label>Change Password:<a href="relogin.php"><input type="submit" name="submit" value="Submit"></a></label>
     </body>
     </html>
